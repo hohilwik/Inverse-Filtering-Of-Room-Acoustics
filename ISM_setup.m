@@ -55,21 +55,21 @@ SetupStruc.Fs = 16000;                 % sampling frequency in Hz
 SetupStruc.room = [3  4  2.5];        % room dimensions in m
 
 SetupStruc.mic_pos = [1.6  1  1.3;    % [x y z] positions of a microphone array in m
-                      1.4  1  1.3;
                       1.2  1  1.3];
       
-SetupStruc.src_traj = [linspace(1,2,101).'  ones(101,1)*3  ones(101,1)*1.7];   % [x y z] positions of source trajectory in m. 
-%% defines a straight line in front of the mic array, with 101 source points along the trajectory (1cm distance increment).
-                                    
+%SetupStruc.src_traj = [linspace(1,2,101).'  ones(101,1)*3  ones(101,1)*1.7];   % [x y z] positions of source trajectory in m. 
+% defines a straight line in front of the mic array, with 101 source points along the trajectory (1cm distance increment).
+SetupStruc.src_traj = [linspace(1,2,101).'  ones(101,1)*3  ones(101,1)*1.7];   % [x y z] positions of source trajectory in m.
+
 SetupStruc.T60 = 0.2;                 % reverberation time T60, or define a T20 field instead!
 % SetupStruc.T20 = 0.15;                % reverberation time T20, or define a T60 field instead!
 
 SetupStruc.abs_weights = [0.6  0.9  0.5  0.6  1.0  0.8];    % (optional) weights for the resulting alpha coefficients.
-%% simulates a carpeted floor, and sound-absorbing material on the ceiling and the second x-dimension wall.
+% simulates a carpeted floor, and sound-absorbing material on the ceiling and the second x-dimension wall.
 
 
 %% Uncomment the following for a 3D plot of the above setup:
-% plot3(SetupStruc.src_traj(:,1),SetupStruc.src_traj(:,2),SetupStruc.src_traj(:,3),'ro-','markersize',4); hold on;
-% plot3(SetupStruc.mic_pos(:,1),SetupStruc.mic_pos(:,2),SetupStruc.mic_pos(:,3),'ko','markerfacecolor',ones(1,3)*.6);
-% axis equal; axis([0 SetupStruc.room(1) 0 SetupStruc.room(2) 0 SetupStruc.room(3)]);
-% box on; xlabel('x-axis (m)'); ylabel('y-axis (m)'); zlabel('z-axis (m)');
+ plot3(SetupStruc.src_traj(:,1),SetupStruc.src_traj(:,2),SetupStruc.src_traj(:,3),'ro-','markersize',4); hold on;
+ plot3(SetupStruc.mic_pos(:,1),SetupStruc.mic_pos(:,2),SetupStruc.mic_pos(:,3),'ko','markerfacecolor',ones(1,3)*.6);
+ axis equal; axis([0 SetupStruc.room(1) 0 SetupStruc.room(2) 0 SetupStruc.room(3)]);
+ box on; xlabel('x-axis (m)'); ylabel('y-axis (m)'); zlabel('z-axis (m)');
