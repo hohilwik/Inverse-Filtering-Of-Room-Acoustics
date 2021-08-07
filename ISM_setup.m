@@ -48,7 +48,7 @@ function [SetupStruc] = ISM_setup()
 % these fields in the file below. Set this value to 0 for anechoic
 % environments (direct path only).
 
-SetupStruc.Fs = 16000;                 % sampling frequency in Hz
+SetupStruc.Fs = 44100;                 % sampling frequency in Hz
 
 % SetupStruc.c = 343;                   % (optional) propagation speed of acoustic waves in m/s
 
@@ -59,7 +59,7 @@ SetupStruc.mic_pos = [1.6  1  1.3;    % [x y z] positions of a microphone array 
       
 %SetupStruc.src_traj = [linspace(1,2,101).'  ones(101,1)*3  ones(101,1)*1.7];   % [x y z] positions of source trajectory in m. 
 % defines a straight line in front of the mic array, with 101 source points along the trajectory (1cm distance increment).
-SetupStruc.src_traj = [linspace(1,2,101).'  ones(101,1)*3  ones(101,1)*1.7];   % [x y z] positions of source trajectory in m.
+SetupStruc.src_traj = [1.5 3 1.7];   % [x y z] positions of source trajectory in m.
 
 SetupStruc.T60 = 0.2;                 % reverberation time T60, or define a T20 field instead!
 % SetupStruc.T20 = 0.15;                % reverberation time T20, or define a T60 field instead!
