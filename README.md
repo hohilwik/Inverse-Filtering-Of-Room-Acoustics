@@ -56,8 +56,18 @@ According to Neely et al[1], it was found that some of the distortion in the sig
  
  ## References
  [1] ST Neely and JB Allen, "Invertibility of a room impulse response", 1979
+ 
+ 
 [2] LA Poole, GE Warnaka, and RC Cutter, "The implementation of digital filters using a modified Widrow-Hoff algorithm for the adaptive cancellation of acoustic noise", 1984
+
+
 [3] M Miyoshi and Y Kaneda, "Inverse control of room acoustics using multiple loudspeakers and/or microphones", 1986
+
+
 [4] Lehmann & Johansson, "Prediction of energy decay in room impulse responses simulated with an image-source model", J. Acoust. Soc. Am., vol. 124(1), pp. 269-277, July 2008)
+
+
 [5] J.B. Allen and D.A. Berkley, "Image method for efficiently simulating small-room acoustics," Journal Acoustic Society of America, 65(4), April 1979, p 943
+
+
 [6] A Oppenheim and RW Schafer, Digital Signal Processing, 1975
