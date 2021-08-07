@@ -48,9 +48,15 @@ According to Neely et al[1], it was found that some of the distortion in the sig
  
  ## Simulation and Results
  
- We simulated the room impulse response using the method described in [6] and wrote code to account for many possible circumstances for the room
+ We simulated the room impulse response using the method described in [6] and wrote code to account for many possible circumstances for the room.
+ A room impulse response simulator was written, with support for multiple inputs and outputs, and the room inpulse response with reference to each input, and different reflectivities for each of the six walls. 
+ 
+ 
 ![Power Spectra of Room Response](https://github.com/hohilwik/Inverse-Filtering-Of-Room-Acoustics/blob/main/images/power_spectra_of_room_response.jpg "Power Spectra of Room Response")
  
+ We found that the room impulse response we achieved closely resembled that given in the paper, with some frequencies being much more attenuated than others, likely due to the specifications of the room. A direct inverse filter H(z) = 1/G(z) of this was also implemented, which gives us badinversefilter.wav, which can be seen when the code is run. This inverse filter does bring back a lot of the original audio, but adds a lot of noise near the poles, leading to unpleasantness. 
+ 
+ The better filter proposed in the paper was also implemented using a circulant matrix, results of which will be attached later.
  
  ## Conclusion
  
