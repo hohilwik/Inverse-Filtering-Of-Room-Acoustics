@@ -66,4 +66,3 @@ subplot(2,2,3);
 plot(0:NUM-1, abs(h1));
 subplot(2,2,4);
 plot(0:NUM-1, abs(h2));
-
