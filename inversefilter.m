@@ -56,7 +56,8 @@ end
 %    end
 %end
 
-Gt= transpose(G1G2);
-Hfilter = inv(Gt)*D;
+%Gt= transpose(G1G2);
+inverseG = inv( G1G2(1:59,1:59) );
+Hfilter = inv(inverseG)*D(1:L);
 
 
