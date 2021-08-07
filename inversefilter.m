@@ -18,23 +18,45 @@ g2 = cell2mat(RIR_cell(2,:));
 % I is the order of the filter, chosen such that the resulting matrix is
 % square
 %M = min( length(g1), length(g2) );
+g1 = g1(1:30);
+g2 = g2(1:30);
+
 M = length(g1);
 N = length(g2);
 I = N-1;
 J = M-1;
-L = max( M+I, N+J );
+L = M+I;
 G1G2 = zeros(L+1, I+J+2);
+D = zeros(L+1, 1);
+D(1) = 1;
 
 
 for i=1:I+1
     for k=1:M
-        G1G2(i,i+k)=g1(k);
+        G1G2(i+k-1,i)=g1(k);
     end
-   
 end
 
-for i=I+2:I+J+2
+for i=1:J+1
     for k=1:N
-        G1G2(i,i+k)=g2(k);
+        G1G2(i+k-1,i+I+1)=g2(k);
     end
 end
+
+%for i=1:I+1
+%    for k=1:N
+%        G1G2(i+k,k)=g1(k);
+%    end
+   
+%end
+
+%for i=I+2:I+J+2
+%    for k=1:N
+%        G1G2(i+k,k)=g2(k);
+%    end
+%end
+
+Gt= transpose(G1G2);
+Hfilter = inv(Gt)*D;
+
+
